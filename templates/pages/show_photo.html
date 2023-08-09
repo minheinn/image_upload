@@ -11,6 +11,7 @@
 
     <style>
         .image-thumbail {
+            height: 200px;
             object-fit: cover;
         }
         .list-group-item a {
@@ -20,9 +21,10 @@
     </style>
 
 </head>
-<body>
-    <div class="container mt-5">
+<body class=" m-5">
+    <div class="container">
         <div class="row">
+
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-header">
@@ -45,16 +47,17 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
+
                     {% for photo in photos %}
                         <div class="col-md-4">
                             <div class="card mb-3">
-                                <img src="{{photo.image.url}}" class="image-thumbail" alt="...">
+                                    <img src="{{ photo.image.url }}" class="image-thumbail" alt="...">
                                 <div class="card-body">
-                                <small>Category: {{photo.category.name}}</small>
+                                    <small> Category: {{ photo.category.name }}</small>
                                 </div>
                                 <a href="{% url 'view_photo' photo.id %}" class="btn btn-outline-dark btn-block btn-sm">View</a>
                             </div>
-                        </div>
+                        </div>                      
                     {% empty %}
                         <h3> No Photoes...</h3>
                     {% endfor %}
