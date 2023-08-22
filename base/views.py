@@ -29,6 +29,7 @@ def AddPhoto(request):
         
         photo = Photo.objects.create(
             category=category,
+            name=data['name'],
             description=data['description'],
             image=image,
         )
@@ -37,7 +38,7 @@ def AddPhoto(request):
     context = {'categories':categories}
     return render(request, 'pages/add_photo.html', context)
 
-def ViewPhoto(request, pk):
-    photo = Photo.objects.get(id=pk)    
+def ViewPhoto(request, slug):
+    photo = Photo.objects.get(slug=slug)    
     context = {'photo':photo}
     return render(request, 'pages/view_photo.html', context)

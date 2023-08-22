@@ -53,9 +53,10 @@
                             <div class="card mb-3">
                                     <img src="{{ photo.image.url }}" class="image-thumbail" alt="...">
                                 <div class="card-body">
-                                    <small> Category: {{ photo.category.name }}</small>
+                                    <div><small> Category: {{ photo.category.name }}</small></div>
+                                    <div><small> Name: {{ photo.name }}</small></div>
                                 </div>
-                                <a href="{% url 'view_photo' photo.id %}" class="btn btn-outline-dark btn-block btn-sm">View</a>
+                                <a href="{% url 'view_photo' photo.slug %}" class="btn btn-outline-dark btn-block btn-sm">View</a>
                             </div>
                         </div>                      
                     {% empty %}

@@ -18,10 +18,14 @@
                 <div class="card p-4">
                     <form method="post" action="" enctype="multipart/form-data">
                         {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input required name="name" class="form-control" placeholder="Enter a Name"></input>
+                        </div>
                         
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
-                            <textarea required name="description" class="form-control" placeholder="Enter a description" rows="3"></textarea>
+                            <input required name="description" class="form-control" placeholder="Enter a description" rows="3"></input>
                         </div>
 
                         <div class="mb-3">
